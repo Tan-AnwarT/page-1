@@ -1,13 +1,15 @@
+/* ===== Root Variables ===== */
 :root {
-  --bg:#111;
-  --panel:#1a1a1a;
-  --muted:#bfbfbf;
-  --accent:#d32f2f;
-  --accent-dark:#ff0000;
-  --white:white;
-  --card-radius:10px;
+  --bg: #111;
+  --panel: #1a1a1a;
+  --muted: #bfbfbf;
+  --accent: #d32f2f;
+  --accent-dark: #9b2424;
+  --white: #fff;
+  --card-radius: 10px;
 }
 
+/* ===== Global Styles ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,22 +23,29 @@ body {
   line-height: 1.5;
 }
 
+/* ===== Header ===== */
+header,
 #main-header {
   padding: 28px 16px;
   text-align: center;
   background: linear-gradient(90deg, #0c0c0c 0%, #111 100%);
   border-bottom: 4px solid rgba(211,47,47,0.12);
 }
+
+header h1,
 #main-header h1 {
   font-size: 32px;
   letter-spacing: 1px;
   color: var(--accent);
 }
+
+header p,
 #main-header p {
   margin-top: 8px;
   color: var(--muted);
 }
 
+/* ===== Navigation ===== */
 nav {
   display: flex;
   justify-content: center;
@@ -44,25 +53,32 @@ nav {
   padding: 12px 10px;
   background: #0b0b0b;
 }
+
 nav a {
   color: var(--muted);
   text-decoration: none;
   font-weight: 600;
   padding: 6px 10px;
   border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
+
 nav a:hover {
   color: var(--white);
   background: rgba(255,255,255,0.03);
 }
 
-main {
+/* ===== Main Content ===== */
+main,
+.container {
   max-width: 980px;
   margin: 24px auto;
   padding: 0 16px 48px;
 }
 
-.panel {
+/* Panels / Steps */
+.panel,
+.step {
   background: var(--panel);
   padding: 18px;
   border-radius: var(--card-radius);
@@ -70,59 +86,65 @@ main {
   margin-bottom: 20px;
 }
 
-.steps {
-  display: grid;
-  gap: 18px;
+.panel h2,
+.step h2 {
+  margin-bottom: 10px;
+  color: var(--accent);
 }
 
+.panel p,
+.step p {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
+
 .card {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
   border: 1px solid rgba(255,255,255,0.04);
   padding: 14px;
-  border-radius: 10px;
+  border-radius: var(--card-radius);
   min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform .18s ease, border-color .18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
+
 .card:hover {
   transform: translateY(-6px);
   border-color: rgba(211,47,47,0.35);
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
+
 .card h3 {
   margin-bottom: 6px;
   color: var(--accent);
 }
+
 .card p {
   color: var(--muted);
   font-size: 14px;
 }
+
 .card-footer {
   text-align: right;
   margin-top: 12px;
 }
 
-.panel h2 {
-  margin-bottom: 10px;
-  color: var(--accent);
-}
-.panel p {
-  margin-bottom: 12px;
-  color: var(--muted);
-}
-
+/* Community Section */
 .community {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .community a.join {
   display: inline-block;
   background: var(--accent);
@@ -131,29 +153,36 @@ main {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
+  transition: background 0.2s ease;
 }
+
 .community a.join:hover {
   background: var(--accent-dark);
 }
+
 .muted {
   color: var(--muted);
   font-size: 13px;
 }
+
 .donors ul {
   margin-left: 18px;
   margin-top: 6px;
   color: var(--muted);
 }
+
 .donors ul li:hover {
   color: var(--accent);
   cursor: default;
 }
 
+/* Call to Action Buttons */
 .cta {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
 .btn {
   background: transparent;
   color: var(--accent);
@@ -162,17 +191,21 @@ main {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
+  transition: all 0.2s ease;
 }
+
 .btn:hover {
   background: var(--accent);
   color: var(--white);
   border-color: var(--accent-dark);
 }
+
 .btn-muted {
   color: var(--muted);
   border-color: var(--muted);
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 18px 10px;
@@ -182,95 +215,39 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.03);
 }
 
-.panel#step1 {
-  position: relative;
-}
-
+/* Utility */
 a[href] {
   transition: color 0.2s ease;
 }
 
-@media (max-width:520px) {
-  #main-header h1 { font-size: 22px; }
-  .cards { grid-template-columns: 1fr; }
+/* ===== Page 2 Specific Styles ===== */
+/* Page 2 styles */
+.step {
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-
-
-
-:root {
-  --bg:#111;
-  --panel:#1a1a1a;
-  --muted:#bfbfbf;
-  --accent:#d32f2f;
-  --accent-dark:#9b2424;
-  --white:#fff;
-  --card-radius:10px;
+h1, h2, h3 {
+  text-align: center;
+  margin: 0.5rem 0;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
+ul {
+  margin: 0.5rem 0 0 1.5rem;
   padding: 0;
 }
 
+li {
+  margin-bottom: 0.5rem;
+}
 
- body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      color: #eee;
-    }
+/* ===== Responsive ===== */
+@media (max-width: 520px) {
+  #main-header h1 {
+    font-size: 22px;
+  }
 
-    header {
-      background-color: #b00;
-      padding: 1.5rem;
-      text-align: center;
-      color: white;
-    }
-
-    h1, h2, h3 {
-      text-align: center;
-      margin: 0.5rem 0;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .step {
-      background-color: #222;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    }
-
-    ul {
-      margin: 0.5rem 0 0 1.5rem;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    nav {
-      background-color: #333;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    nav a {
-      color: #eee;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ff4444;
-    }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
