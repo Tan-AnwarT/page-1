@@ -1,3 +1,4 @@
+/* ===== Root Variables ===== */
 :root {
   --bg: #111;
   --panel: #1a1a1a;
@@ -8,6 +9,7 @@
   --card-radius: 10px;
 }
 
+/* ===== Global Styles ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,6 +23,7 @@ body {
   line-height: 1.5;
 }
 
+/* ===== Header ===== */
 #main-header,
 header {
   padding: 28px 16px;
@@ -42,6 +45,7 @@ header p {
   color: var(--muted);
 }
 
+/* ===== Navigation ===== */
 nav {
   display: flex;
   justify-content: center;
@@ -64,6 +68,7 @@ nav a:hover {
   background: rgba(255,255,255,0.03);
 }
 
+/* ===== Main Content ===== */
 main,
 .container {
   max-width: 980px;
@@ -71,6 +76,7 @@ main,
   padding: 0 16px 48px;
 }
 
+/* Panels / Steps */
 .panel,
 .step {
   background: var(--panel);
@@ -92,6 +98,7 @@ main,
   color: var(--muted);
 }
 
+/* Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -131,6 +138,7 @@ main,
   margin-top: 12px;
 }
 
+/* Community Section */
 .community {
   display: flex;
   flex-direction: column;
@@ -168,6 +176,7 @@ main,
   cursor: default;
 }
 
+/* Call to Action Buttons */
 .cta {
   display: flex;
   gap: 10px;
@@ -196,6 +205,7 @@ main,
   border-color: var(--muted);
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 18px 10px;
@@ -205,6 +215,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.03);
 }
 
+/* Misc / Utility */
 .panel#step1 {
   position: relative;
 }
@@ -213,6 +224,7 @@ a[href] {
   transition: color 0.2s ease;
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 520px) {
   #main-header h1 {
     font-size: 22px;
@@ -221,56 +233,4 @@ a[href] {
   .cards {
     grid-template-columns: 1fr;
   }
-}
-
-/* page 2 css ko sir */
-header {
-  background-color: #b00;
-  padding: 1.5rem;
-  text-align: center;
-  color: white;
-}
-
-h1, h2, h3 {
-  text-align: center;
-  margin: 0.5rem 0;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.step {
-  background-color: #222;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-ul {
-  margin: 0.5rem 0 0 1.5rem;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-nav {
-  background-color: #333;
-  text-align: center;
-  padding: 1rem;
-}
-
-nav a {
-  color: #eee;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover {
-  color: #ff4444;
 }
